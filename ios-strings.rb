@@ -417,7 +417,8 @@ def lookup_string_ref(locale, str)
     str = lookup_locales(locale, :strings, r[1])
   end
   return str.clone if str
-  return old.clone
+  return old.clone if old
+  return ""
 end
 
 def export_ios_string(locale, str)

@@ -473,6 +473,8 @@ def export_ios(res_path, locale)
 
     File.open(plurals_path, 'wb') { |f|
       f.write "\xef\xbb\xbf"
+      f.write "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+      f.write "<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n"
       f.write "<plist version=\"1.0\">\n"
       f.write "<dict>\n\n"
 

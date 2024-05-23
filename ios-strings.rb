@@ -110,6 +110,8 @@ $plurals_keys = {}
 $skip_empty_files = options[:skip_empty_files]
 
 def import_android_string(str)
+  return unless str
+  
   str.gsub!(/^"(.*)"$/, '\1')
   str.gsub!(/(%(\d\$)?)s/, '\1@')
   str.gsub!(/(%(\d\$)?),d/, '\1d')
